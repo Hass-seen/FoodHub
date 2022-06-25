@@ -6,6 +6,7 @@ namespace FoodHub.Models
     {
         [Key]
         public int ID { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Ingreadiants { get; set; }
         public string Discription { get; set; }
