@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YHj8i107c9YF0lZvg4NURbdEiOBrBrhfoVCjiIS7mRw=",
+  "Hash": "uoRU3vqLqus8PGKQudZg+jaNmDtS5ll14LRCYIzy09o=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FoodHub.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\css\\MintyBoot.css",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "css/MintyBoot.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\MintyBoot.css"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\css\\site.css",

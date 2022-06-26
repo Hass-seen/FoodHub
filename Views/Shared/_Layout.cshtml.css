@@ -11,6 +11,12 @@ a {
   color: #0077cc;
 }
 
+.feed{
+  width: 70%;
+  margin: auto;
+  border: 1px black solid;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
