@@ -27,10 +27,18 @@ public class RecipeController : Controller
     
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Post(Recipe obj)
-    {
+    public IActionResult Create(Recipe obj)
+    {     if(obj.link==null){
+            obj.link=".";
+        }
+        if(obj.Discription==null){
+            obj.Discription="";
+        }
+        if(obj.Ingreadiants==null){
+            obj.Ingreadiants="";
+        }
         _db.Recipes.Add(obj);
         _db.SaveChanges();
-        return RedirectToAction("IndexRecipe");
+       return RedirectToAction("IndexRecipe");
     }
 }

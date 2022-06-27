@@ -25,6 +25,10 @@
 		<h6>@item.DateOfCreation</h6> <br/>
 		  <h4 style=''>@item.Ingreadiants</h4>
 		  <div id="wrapper"><p>@item.Discription</p></div><br/>
+          @if (@item.link!=".")
+          {
+         <iframe width="560" height="315" src= ""@item.link title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+          }
 		  </div>
     }
 
