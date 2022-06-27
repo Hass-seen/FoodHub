@@ -1,0 +1,29 @@
+@model Recipe
+
+<form method="Post" asp-action="Delete">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Delete Recipe</h2>
+            <hr />
+        </div>
+        <div class="mb-3" >
+            <label asp-for="Name"></label>
+            <input type="text" asp-for="Name"  class="form-control" required readonly/>
+        </div>
+         <div class="mb-3" >
+            <label asp-for="Ingreadiants"></label>
+            <input type="text" asp-for="Ingreadiants"  class="form-control" readonly/>
+        </div>
+        <div class="mb-3" >
+            <label asp-for="Discription"></label>
+            <input type="text" asp-for="Discription"  class="form-control" readonly/>
+        </div>
+        <div class="mb-3" >
+            <label asp-for="link"></label>
+            <input type="text" asp-for="link"  class="form-control" readonly/>
+        </div>
+        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Delete</button>
+        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
+    </div>
+</form>
+

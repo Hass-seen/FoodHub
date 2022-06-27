@@ -7,15 +7,18 @@ namespace FoodHub.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDBContext db)
         {
             _logger = logger;
+            _db=db;
         }
 
         public IActionResult Index()
         {
-            return View();
+        IEnumerable<Recipe> RecipeList= _db.Recipes.ToList();
+        return View(RecipeList);
         }
 
         public IActionResult Privacy()
