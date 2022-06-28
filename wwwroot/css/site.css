@@ -19,6 +19,58 @@ html {
   margin-bottom: 2%;
   border: 1px black solid;
 }
+
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.homefeed{
+  border-radius: 10px;
+  padding: 2%;
+  margin: auto;
+  margin-bottom: 2%;
+  margin-bottom: 2%;
+  width: 70%;
+  border: 1px black solid;
+}
 body {
   margin-bottom: 60px;
+}
+.AdInFeed{
+  width: 70%;
+  margin: auto;
+}
+
+.AdLeft{
+  width: 12%;
+  position:absolute;
+  left: 1px;
+  top: 1px;
+  height: 100%;
+  border: 1px black solid;
+
+}
+.AdRight{
+  width: 12%;
+  position:absolute;
+  right: 1px;
+  height: 100%;
+  top: 1px;
+  border: 1px black solid;
+
+}
+.container{
+  width: 100%;
+  position: relative;
+  height: fit-content;
 }
