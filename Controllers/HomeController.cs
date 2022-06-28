@@ -17,7 +17,8 @@ namespace FoodHub.Controllers
 
         public IActionResult Index()
         {
-        IEnumerable<Recipe> RecipeList= _db.Recipes.ToList();
+        IEnumerable<Recipe> List= _db.Recipes.ToList();
+       IEnumerable<Recipe> RecipeList=List.Reverse();
         return View(RecipeList);
         }
 

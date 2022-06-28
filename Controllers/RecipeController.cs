@@ -14,7 +14,8 @@ public class RecipeController : Controller
     }
     public IActionResult IndexRecipe()
     {
-        IEnumerable<Recipe> RecipeList= _db.Recipes.ToList();
+        IEnumerable<Recipe> List= _db.Recipes.ToList();
+       IEnumerable<Recipe> RecipeList=List.Reverse();
         return View(RecipeList);
     }
 
@@ -38,7 +39,10 @@ public class RecipeController : Controller
             obj.Ingreadiants="";
         }
         string[] code= obj.link.Split("=");
-        string[] filtered= code[1].Split("&");
+        string[] filtered= code;
+        if(code.Length>1){
+         filtered= code[1].Split("&");
+        }
         obj.link="https://www.youtube.com/embed/"+filtered[0];
         _db.Recipes.Add(obj);
         _db.SaveChanges();
