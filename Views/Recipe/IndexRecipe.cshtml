@@ -25,9 +25,9 @@
 		<h6>@item.DateOfCreation</h6> <br/>
 		  <h4 style=''>@item.Ingreadiants</h4>
 		  <div id="wrapper"><p>@item.Discription</p></div><br/>
-          @if (@item.link!=".")
+          @if (@item.link.Length != "https://www.youtube.com/embed/".Length)
           {
-         <iframe width="560" height="315" src= "https://www.youtube.com/embed/@item.link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br> 
+         <iframe width="560" height="315" src= @item.link title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br> 
           }
 
           <a asp-controller="Recipe" asp-action="Edite" class="btn btn-primary" asp-route-id="@item.ID" >Edite</a> <a asp-controller="Recipe" asp-action="Delete" class="btn btn-danger" asp-route-id="@item.ID" >Delete</a>

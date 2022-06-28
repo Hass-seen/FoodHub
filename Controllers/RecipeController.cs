@@ -29,7 +29,7 @@ public class RecipeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Create(Recipe obj)
     {     if(obj.link==null){
-            obj.link=".";
+            obj.link=".=.";
         }
         if(obj.Discription==null){
             obj.Discription="";
@@ -37,6 +37,9 @@ public class RecipeController : Controller
         if(obj.Ingreadiants==null){
             obj.Ingreadiants="";
         }
+        string[] code= obj.link.Split("=");
+        string[] filtered= code[1].Split("&");
+        obj.link="https://www.youtube.com/embed/"+filtered[0];
         _db.Recipes.Add(obj);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");
@@ -107,4 +110,31 @@ public class RecipeController : Controller
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");
     }
+
+
+
+    
+ public IActionResult Login()
+    {
+
+        return View();
+    }
+
+
+    
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Login(Admin admin)
+    {   if(admin.account!= "BobTheBuilder"){
+        ModelState.AddModelError("account", "Wrong Username");
+        }else if(admin.password!= "BobTheBuilder123"){
+            ModelState.AddModelError("password", "Wrong Password");
+        }else{
+         return RedirectToAction("IndexRecipe");
+        }
+
+         return View(admin);
+
+    }
+
 }
