@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace FoodHub.Models
 {
     public class Recipe
@@ -13,6 +12,8 @@ namespace FoodHub.Models
         public string link { get; set; } = ".";
 
         public DateTime DateOfCreation { get; set; } = DateTime.Now;
+
+        public List<Recipe_Ingreadiant> Recipe_Ingreadiants { get; set; }
 
     }
 }

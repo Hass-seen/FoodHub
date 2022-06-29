@@ -7,5 +7,7 @@ namespace FoodHub.Models
         [Key]
         public string Name { get; set; }
 
+     public List<Recipe_Ingreadiant> Recipe_Ingreadiants { get; set; }
+
     }
 }
