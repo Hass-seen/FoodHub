@@ -35,9 +35,7 @@ public class RecipeController : Controller
         if(obj.Discription==null){
             obj.Discription="";
         }
-        if(obj.Ingreadiants==null){
-            obj.Ingreadiants="";
-        }
+
         string[] code= obj.link.Split("=");
         string[] filtered= code;
         if(code.Length>1){
@@ -74,9 +72,7 @@ public class RecipeController : Controller
         if(obj.Discription==null){
             obj.Discription="";
         }
-        if(obj.Ingreadiants==null){
-            obj.Ingreadiants="";
-        }
+
         _db.Recipes.Update(obj);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");
@@ -107,9 +103,8 @@ public class RecipeController : Controller
         if(obj.Discription==null){
             obj.Discription="";
         }
-        if(obj.Ingreadiants==null){
-            obj.Ingreadiants="";
-        }
+
+
         _db.Recipes.Remove(obj);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");

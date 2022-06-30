@@ -4,6 +4,7 @@ namespace FoodHub.Models
 {
     public class Recipe_Ingreadiant
     {
+
         public int RecipeID { get; set; }
         public Recipe recipe { get; set; }
 

@@ -9,5 +9,13 @@ public class ApplicationDBContext : DbContext
         
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+     modelBuilder.Entity<Recipe_Ingreadiant>().HasKey(pk=> new{pk.IngreadiantName,pk.RecipeID});
+     modelBuilder.Entity<Recipe_Ingreadiant>().HasOne(r=>r.recipe).WithMany(ri=> ri.Recipe_Ingreadiants).HasForeignKey(rid=> rid.RecipeID);
+     modelBuilder.Entity<Recipe_Ingreadiant>().HasOne(r=>r.ingreadiant).WithMany(ri=> ri.Recipe_Ingreadiants).HasForeignKey(rid=> rid.IngreadiantName);  
+    }
     public DbSet<Recipe> Recipes {get; set;}
+    public DbSet<Ingreadiant> Ingreadiants {get; set;}
+    public DbSet<Recipe_Ingreadiant> Recipes_Ingreadiants {get; set;}
 }
