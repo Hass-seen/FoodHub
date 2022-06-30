@@ -13,7 +13,7 @@
          <div class="mb-3" >
             @* <label asp-for="Recipe_Ingreadiants"></label>
             <input type="text" asp-for="Recipe_Ingreadiants"  class="form-control"/> *@
-                <table class="table" style="width: 70%;">
+                <table class="table" style="width: 70%;" id="myTable">
                         <tr>
                             <th scope="col">Ingreadiant</th>
                             <th scope="col">quantity</th>
@@ -23,7 +23,7 @@
                             <td><input id="A0" type="text" class="form-control"></td>
                         </tr>
                 </table>
-                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
         </div>
         <div class="mb-3" >
             <label asp-for="Discription"></label>
@@ -37,4 +37,18 @@
         <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
     </div>
 </form>
+<script>
+    var count=0;
+
+
+    function MoreRows(e){
+            count++;
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(2);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "<input id='N"+count+"' type='text' class='form-control'>";
+            cell2.innerHTML = "<input id='A"+count+"' type='text' class='form-control'>";
+    }
+</script>    
 
