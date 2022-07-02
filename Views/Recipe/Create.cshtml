@@ -19,8 +19,8 @@
                             <th scope="col">quantity</th>
                         </tr>
                         <tr scope="row">
-                            <td><input id="N0" type="text" class="form-control"></td>
-                            <td><input id="A0" type="text" class="form-control"></td>
+                            @* <td><input id="N0" type="text" class="form-control"></td>
+                            <td><input id="A0" type="text" class="form-control"></td> *@
                         </tr>
                 </table>
                 <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
@@ -33,22 +33,33 @@
             <label asp-for="link"></label>
             <input type="text" asp-for="link" class="form-control"/>
         </div>
-        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Add</button>
+        <button type="button" id="sub" onclick="go()" class="btn btn-primary" style="width: 150px;">Add</button>
         <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
     </div>
 </form>
 <script>
     var count=0;
-
+    var IngreadianAndAmounts;
 
     function MoreRows(e){
             count++;
             var table = document.getElementById("myTable");
-            var row = table.insertRow(2);
+            var row = table.insertRow(count);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             cell1.innerHTML = "<input id='N"+count+"' type='text' class='form-control'>";
             cell2.innerHTML = "<input id='A"+count+"' type='text' class='form-control'>";
     }
+    function go(){
+    for(var i=1 ; i<=count; i++){
+        var NameCount= "N"+i;
+        var AmountCount="A"+i;
+      IngreadianAndAmounts += "Name="+document.getElementById(NameCount).value+", Amount="+document.getElementById(AmountCount).value+"; ";
+    }
+    console.log(IngreadianAndAmounts)
+    }
+
+
+    
 </script>    
 
