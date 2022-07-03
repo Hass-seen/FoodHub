@@ -30,7 +30,7 @@ public class RecipeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Create(string? obj)
     {   var recipe=new Recipe(); 
-        string[] rec=  obj.Split(",");
+        string[] rec=  obj.Split("&");
         recipe.Name=rec[0];
         recipe.Discription=rec[1];
         recipe.link=rec[2];
