@@ -1,4 +1,4 @@
-@model Recipe
+@model TransportRecipe
 
 
 
@@ -11,8 +11,8 @@
             <hr />
         </div>
         <div class="mb-3" >
-            <label asp-for="Name"></label>
-            <input type="text" asp-for="Name"  id="Name"  class="form-control" required/>
+            <label asp-for="name"></label>
+            <input type="text" asp-for="name"  id="Name"  class="form-control" required/>
         </div>
          <div class="mb-3" >
             @* <label asp-for="Recipe_Ingreadiants"></label>
@@ -30,14 +30,14 @@
                 <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
         </div>
         <div class="mb-3" >
-            <label asp-for="Discription"></label>
-            <input type="text" asp-for="Discription"  id="Discription"  class="form-control"/>
+            <label asp-for="discription"></label>
+            <input type="text" asp-for="discription"  id="Discription"  class="form-control"/>
         </div>
         <div class="mb-3" >
             <label asp-for="link"></label>
             <input type="text" asp-for="link" id="Link" class="form-control"/>
         </div>
-        <button  id="sub" class="btn btn-primary" style="width: 150px;">Add</button>
+        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Add</button>
         <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
     </div>
 </form>  
@@ -49,6 +49,7 @@
 
 
     var count=0;
+    var index=0;
     var IngreadianAndAmounts="";
 function go(){
     for(var i=1 ; i<=count; i++){
@@ -85,8 +86,10 @@ function MoreRows(){
             var row = table.insertRow(count);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
-            cell1.innerHTML = "<input id='N"+count+"' type='text' class='form-control'>";
-            cell2.innerHTML = "<input id='A"+count+"' type='text' class='form-control'>";
+            cell1.innerHTML = "<input id='N"+count+"' asp-for='RecIngr["+(index)+"]' type='text' class='form-control'>";
+            index++;
+            cell2.innerHTML = "<input id='A"+count+"' asp-for='RecIngr["+index+"]' type='text' class='form-control'>";
+            index++;
     }
 
    

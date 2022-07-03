@@ -28,26 +28,15 @@ public class RecipeController : Controller
     
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(string? obj)
+    public IActionResult Create(TransportRecipe obj)
     {   var recipe=new Recipe(); 
-        string[] rec=  obj.Split("&");
-        recipe.Name=rec[0];
-        recipe.Discription=rec[1];
-        recipe.link=rec[2];
+        recipe.Name=obj.name;
+        recipe.Discription=obj.discription;
+        recipe.link=obj.link;
 
-        string[] Ingstodb= rec[3].Split(";");
-        for(var i=0; i<Ingstodb.Length;i++){
-            string[] Data= Ingstodb[i].Split("*");
-            var ing= new Ingreadiant();
-                ing.Name=Data[0];
-            _db.Ingreadiants.Add(ing);
-            _db.SaveChanges();
-            var rec_Ing= new Recipe_Ingreadiant();
-            rec_Ing.RecipeName=recipe.Name;
-            rec_Ing.amount=Data[1];
-            rec_Ing.IngreadiantName=Data[0];
-            _db.Recipes_Ingreadiants.Add(rec_Ing);
-            _db.SaveChanges();
+        
+        for(var i=0; i<obj.RecIngr.Length-1;i=i+2){
+            var ing= new Ingreadiant
         }
         _db.Recipes.Add(recipe);
         _db.SaveChanges();
