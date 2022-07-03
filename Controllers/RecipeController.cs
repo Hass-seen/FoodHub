@@ -34,10 +34,15 @@ public class RecipeController : Controller
         recipe.Discription=obj.discription;
         recipe.link=obj.link;
 
-        
-        for(var i=0; i<obj.RecIngr.Length-1;i=i+2){
-            var ing= new Ingreadiant
-        }
+        string[] ings=obj.RecIngr;
+        if(ings.Length!=null){
+        for(var i=0; i<ings.Length-1;i=i+2){
+            if(ings[i]==null){
+
+            }
+            var ing= new Ingreadiant();
+
+         }}
         _db.Recipes.Add(recipe);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");

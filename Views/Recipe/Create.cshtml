@@ -86,9 +86,10 @@ function MoreRows(){
             var row = table.insertRow(count);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
-            cell1.innerHTML = "<input id='N"+count+"' asp-for='RecIngr["+(index)+"]' type='text' class='form-control'>";
+            var ind=index.toString;
+            cell1.innerHTML = "<input id='N"+count+"' asp-for='@Model.RecIngr"+[ind]+"' type='text' class='form-control'>";
             index++;
-            cell2.innerHTML = "<input id='A"+count+"' asp-for='RecIngr["+index+"]' type='text' class='form-control'>";
+            cell2.innerHTML = "<input id='A"+count+"' asp-for='@Model.RecIngr"+[ind]+"'  type='text' class='form-control'>";
             index++;
     }
 
