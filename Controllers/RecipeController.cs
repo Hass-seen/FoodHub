@@ -28,30 +28,37 @@ public class RecipeController : Controller
     
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(Recipe obj)
-    {     if(obj.link==null){
-            obj.link=".=.";
-        }
-        if(obj.Discription==null){
-            obj.Discription="";
-        }
+    public IActionResult Create(string? obj)
+    {   var recipe=new Recipe(); 
+        string[] rec=  obj.Split(",");
+        recipe.Name=rec[0];
+        recipe.Discription=rec[1];
+        recipe.link=rec[2];
 
-        string[] code= obj.link.Split("=");
-        string[] filtered= code;
-        if(code.Length>1){
-         filtered= code[1].Split("&");
+        string[] Ingstodb= rec[3].Split(";");
+        for(var i=0; i<Ingstodb.Length;i++){
+            string[] Data= Ingstodb[i].Split("*");
+            var ing= new Ingreadiant();
+                ing.Name=Data[0];
+            _db.Ingreadiants.Add(ing);
+            _db.SaveChanges();
+            var rec_Ing= new Recipe_Ingreadiant();
+            rec_Ing.RecipeName=recipe.Name;
+            rec_Ing.amount=Data[1];
+            rec_Ing.IngreadiantName=Data[0];
+            _db.Recipes_Ingreadiants.Add(rec_Ing);
+            _db.SaveChanges();
         }
-        obj.link="https://www.youtube.com/embed/"+filtered[0];
-        _db.Recipes.Add(obj);
+        _db.Recipes.Add(recipe);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");
     }
 
 
 
-      public IActionResult Edite(int? id)
+      public IActionResult Edite(string? id)
     {
-        if(id==null || id==0){
+        if(id==null){
             return NotFound();
         }
         var recipefromdb= _db.Recipes.Find(id);
@@ -80,9 +87,9 @@ public class RecipeController : Controller
 
 
 
-     public IActionResult Delete(int? id)
+     public IActionResult Delete(string? id)
     {
-        if(id==null || id==0){
+        if(id==null){
             return NotFound();
         }
         var recipefromdb= _db.Recipes.Find(id);
@@ -97,14 +104,7 @@ public class RecipeController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Recipe obj)
-    {     if(obj.link==null){
-            obj.link=".";
-        }
-        if(obj.Discription==null){
-            obj.Discription="";
-        }
-
-
+    {
         _db.Recipes.Remove(obj);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");
