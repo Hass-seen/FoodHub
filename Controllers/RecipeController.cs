@@ -38,9 +38,23 @@ public class RecipeController : Controller
         if(ings.Length!=null){
         for(var i=0; i<ings.Length-1;i=i+2){
             if(ings[i]==null){
-
+                break;
+            }
+            if(ings[i+1]==null){
+               ings[i+1]="..."; 
             }
             var ing= new Ingreadiant();
+            ing.Name=ings[i];
+            _db.Ingreadiants.Add(ing);
+            _db.SaveChanges();
+            
+            var recIng= new Recipe_Ingreadiant();
+            recIng.amount=ings[i+1];
+            recIng.IngreadiantName=ings[i];
+            recIng.RecipeName=recipe.Name;
+            _db.Recipes_Ingreadiants.Add(recIng);
+            _db.SaveChanges();
+
 
          }}
         _db.Recipes.Add(recipe);

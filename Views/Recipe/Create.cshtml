@@ -22,10 +22,14 @@
                             <th scope="col">Ingreadiant</th>
                             <th scope="col">quantity</th>
                         </tr>
-                        <tr scope="row">
-                            @* <td><input id="N0" type="text" class="form-control"></td>
-                            <td><input id="A0" type="text" class="form-control"></td> *@
-                        </tr>
+                        
+                            @for (int i = 0,j=0;  i < 10; j++,i=i+2)
+                                {<tr scope="row" id="@j" style="display: none;">
+                                  <td> <input asp-for="@Model.RecIngr[i]"/> </td>    
+                                  <td> <input asp-for="@Model.RecIngr[i+1]"/> </td>   
+                                  </tr>     
+                                }
+                        
                 </table>
                 <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
         </div>
@@ -51,7 +55,7 @@
     var count=0;
     var index=0;
     var IngreadianAndAmounts="";
-function go(){
+@* function go(){
     for(var i=1 ; i<=count; i++){
         var NameCount= "N"+i;
         var AmountCount="A"+i;
@@ -78,19 +82,11 @@ function go(){
 
     axios.post("http://localhost:7277/Recipe/Create",{obj:send}).then().catch();
 
-    } 
+    }  *@
 
 function MoreRows(){
+            document.getElementById(count).style.display="block";
             count++;
-            var table = document.getElementById("myTable");
-            var row = table.insertRow(count);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var ind=index.toString;
-            cell1.innerHTML = "<input id='N"+count+"' asp-for='@Model.RecIngr"+[ind]+"' type='text' class='form-control'>";
-            index++;
-            cell2.innerHTML = "<input id='A"+count+"' asp-for='@Model.RecIngr"+[ind]+"'  type='text' class='form-control'>";
-            index++;
     }
 
    
