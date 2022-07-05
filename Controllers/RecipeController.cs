@@ -61,6 +61,25 @@ public class RecipeController : Controller
     foreach(Recipe_Ingreadiant x in obj.Recipe_Ingreadiants){
         x.RecipeName=obj.Name;
     }  
+    //List<Recipe_Ingreadiant> temp=;
+
+    for(int i=obj.Recipe_Ingreadiants.Count -1; i>=0; i--){
+        if(obj.Recipe_Ingreadiants[i].IngreadiantName==null){
+            obj.Recipe_Ingreadiants.Remove(obj.Recipe_Ingreadiants[i]);
+        }else{
+
+
+            var ing= new Ingreadiant();
+            ing.Name= obj.Recipe_Ingreadiants[i].IngreadiantName;
+               try{
+               _db.Ingreadiants.Add(ing);
+               _db.SaveChanges();
+                  }
+              catch(DbUpdateException ex){
+                        
+                        }
+        }
+    }
      try{
         _db.Recipes.Add(obj);
         _db.SaveChanges();
