@@ -67,17 +67,21 @@ public class RecipeController : Controller
         if(obj.Recipe_Ingreadiants[i].IngreadiantName==null){
             obj.Recipe_Ingreadiants.Remove(obj.Recipe_Ingreadiants[i]);
         }else{
-
-
+            if(!_db.Ingreadiants.Any(s=> s.Name==obj.Recipe_Ingreadiants[i].IngreadiantName)){
             var ing= new Ingreadiant();
-            ing.Name= obj.Recipe_Ingreadiants[i].IngreadiantName;
-               try{
-               _db.Ingreadiants.Add(ing);
-               _db.SaveChanges();
-                  }
-              catch(DbUpdateException ex){
+            ing.Name=obj.Recipe_Ingreadiants[i].IngreadiantName;
+
+            obj.Recipe_Ingreadiants[i].ingreadiant=ing;
+            }
+            // var ing= new Ingreadiant();
+            // ing.Name= obj.Recipe_Ingreadiants[i].IngreadiantName;
+            //    try{
+            //    _db.Ingreadiants.Add(ing);
+            //    _db.SaveChanges();
+            //       }
+            //   catch(DbUpdateException ex){
                         
-                        }
+            //             }
         }
     }
      try{
