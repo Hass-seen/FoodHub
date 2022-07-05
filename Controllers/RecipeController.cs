@@ -1,5 +1,6 @@
 using FoodHub.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoodHub.Controllers;
 
@@ -28,37 +29,45 @@ public class RecipeController : Controller
     
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(TransportRecipe obj)
-    {   var recipe=new Recipe(); 
-        recipe.Name=obj.name;
-        recipe.Discription=obj.discription;
-        recipe.link=obj.link;
+    public IActionResult Create(Recipe obj)
+      {   //var recipe=new Recipe(); 
+    //     recipe.Name=obj.name;
+    //     recipe.Discription=obj.discription;
+    //     recipe.link=obj.link;
 
-        string[] ings=obj.RecIngr;
-        if(ings.Length!=null){
-        for(var i=0; i<ings.Length-1;i=i+2){
-            if(ings[i]==null){
-                break;
-            }
-            if(ings[i+1]==null){
-               ings[i+1]="..."; 
-            }
-            var ing= new Ingreadiant();
-            ing.Name=ings[i];
-            _db.Ingreadiants.Add(ing);
-            _db.SaveChanges();
+    //     string[] ings=obj.RecIngr;
+    //     if(ings.Length!=null){
+    //     for(var i=0; i<ings.Length-1;i=i+2){
+    //         if(ings[i]==null){
+    //             continue;
+    //         }
+    //         if(ings[i+1]==null){
+    //            ings[i+1]="..."; 
+    //         }
+    //         var ing= new Ingreadiant();
+    //         ing.Name=ings[i];
+    //         _db.Ingreadiants.Add(ing);
+    //         _db.SaveChanges();
             
-            var recIng= new Recipe_Ingreadiant();
-            recIng.amount=ings[i+1];
-            recIng.IngreadiantName=ings[i];
-            recIng.RecipeName=recipe.Name;
-            _db.Recipes_Ingreadiants.Add(recIng);
-            _db.SaveChanges();
+    //         var recIng= new Recipe_Ingreadiant();
+    //         recIng.amount=ings[i+1];
+    //         recIng.IngreadiantName=ings[i];
+    //         recIng.RecipeName=recipe.Name;
+    //         _db.Recipes_Ingreadiants.Add(recIng);
+    //         _db.SaveChanges();
 
 
-         }}
-        _db.Recipes.Add(recipe);
+    //      }}
+    foreach(Recipe_Ingreadiant x in obj.Recipe_Ingreadiants){
+        x.RecipeName=obj.Name;
+    }  
+     try{
+        _db.Recipes.Add(obj);
         _db.SaveChanges();
+        }
+        catch(DbUpdateException ex){
+        
+        }
        return RedirectToAction("IndexRecipe");
     }
 

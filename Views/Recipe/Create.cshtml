@@ -1,4 +1,4 @@
-@model TransportRecipe
+@model Recipe
 
 
 
@@ -11,8 +11,8 @@
             <hr />
         </div>
         <div class="mb-3" >
-            <label asp-for="name"></label>
-            <input type="text" asp-for="name"  id="Name"  class="form-control" required/>
+            <label asp-for="Name"></label>
+            <input type="text" asp-for="Name"  id="Name"  class="form-control" required/>
         </div>
          <div class="mb-3" >
             @* <label asp-for="Recipe_Ingreadiants"></label>
@@ -23,10 +23,10 @@
                             <th scope="col">quantity</th>
                         </tr>
                         
-                            @for (int i = 0,j=0;  i < 10; j++,i=i+2)
-                                {<tr scope="row" id="@j" style="display: none;">
-                                  <td> <input asp-for="@Model.RecIngr[i]"/> </td>    
-                                  <td> <input asp-for="@Model.RecIngr[i+1]"/> </td>   
+                            @for (int i = 0;  i < 10; i++)
+                                {<tr scope="row" id="@i" style="display: none;">
+                                  <td> <input asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName "/> </td>    
+                                  <td> <input asp-for="@Model.Recipe_Ingreadiants[i].amount"/> </td>   
                                   </tr>     
                                 }
                         
@@ -34,8 +34,8 @@
                 <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
         </div>
         <div class="mb-3" >
-            <label asp-for="discription"></label>
-            <input type="text" asp-for="discription"  id="Discription"  class="form-control"/>
+            <label asp-for="Discription"></label>
+            <input type="text" asp-for="Discription"  id="Discription"  class="form-control"/>
         </div>
         <div class="mb-3" >
             <label asp-for="link"></label>
