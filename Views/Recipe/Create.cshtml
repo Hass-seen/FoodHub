@@ -49,47 +49,10 @@
 
 
 <script>
-
-
-
     var count=0;
-    var index=0;
-    var IngreadianAndAmounts="";
-@* function go(){
-    for(var i=1 ; i<=count; i++){
-        var NameCount= "N"+i;
-        var AmountCount="A"+i;
-      IngreadianAndAmounts += document.getElementById(NameCount).value+"*"+document.getElementById(AmountCount).value+";";
-    }
-
-     var Link=document.getElementById("Link").value;
-    var Discription=document.getElementById("Discription").value;
-   
-         if(Link==null){
-        Link="https://www.youtube.com/embed/.";
-        }
-
-        if(Discription==null){
-            Discription="....";
-        }
-
-        if(IngreadianAndAmounts==null){
-            IngreadianAndAmounts="...*...";
-        }
-
-        var Name= document.getElementById("Name").value;
-        var send= Name+","+Discription+","+Link+","+IngreadianAndAmounts;
-
-    axios.post("http://localhost:7277/Recipe/Create",{obj:send}).then().catch();
-
-    }  *@
-
 function MoreRows(){
             document.getElementById(count).style.display="block";
             count++;
     }
-
-   
-     
 </script> 
 

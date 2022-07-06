@@ -66,24 +66,18 @@ public class RecipeController : Controller
     for(int i=obj.Recipe_Ingreadiants.Count -1; i>=0; i--){
         if(obj.Recipe_Ingreadiants[i].IngreadiantName==null){
             obj.Recipe_Ingreadiants.Remove(obj.Recipe_Ingreadiants[i]);
-        }else{
-            if(!_db.Ingreadiants.Any(s=> s.Name==obj.Recipe_Ingreadiants[i].IngreadiantName)){
-            var ing= new Ingreadiant();
-            ing.Name=obj.Recipe_Ingreadiants[i].IngreadiantName;
+        }else
+            {
+                if (_db.Ingreadiants.Any(s => s.Name == obj.Recipe_Ingreadiants[i].IngreadiantName))
+                {
+                    continue;
+                }
+                var ing = new Ingreadiant();
+                ing.Name = obj.Recipe_Ingreadiants[i].IngreadiantName;
 
-            obj.Recipe_Ingreadiants[i].ingreadiant=ing;
+                obj.Recipe_Ingreadiants[i].ingreadiant = ing;
             }
-            // var ing= new Ingreadiant();
-            // ing.Name= obj.Recipe_Ingreadiants[i].IngreadiantName;
-            //    try{
-            //    _db.Ingreadiants.Add(ing);
-            //    _db.SaveChanges();
-            //       }
-            //   catch(DbUpdateException ex){
-                        
-            //             }
         }
-    }
      try{
         _db.Recipes.Add(obj);
         _db.SaveChanges();
@@ -96,12 +90,23 @@ public class RecipeController : Controller
 
 
 
-      public IActionResult Edite(string? id)
+      public  IActionResult Edite(string? name)
     {
-        if(id==null){
+        if(name==null){
             return NotFound();
         }
-        var recipefromdb= _db.Recipes.Find(id);
+        var recipefromdb= _db.Recipes.Find(name);
+        var recipe_Ingreadiantsfromdb= _db.Recipes_Ingreadiants.Where(recing=> recing.RecipeName== recipefromdb.Name);
+        recipefromdb.Recipe_Ingreadiants= recipe_Ingreadiantsfromdb.ToList();
+
+        for(int i=0; i<31;i++){
+            var x= new Recipe_Ingreadiant();
+            x.amount="";
+            x.IngreadiantName=recipefromdb.Name;
+            x.IngreadiantName="";
+            recipefromdb.Recipe_Ingreadiants.Add(x);
+        }
+
         if(recipefromdb == null){
             return NotFound();
         }
@@ -119,9 +124,34 @@ public class RecipeController : Controller
         if(obj.Discription==null){
             obj.Discription="";
         }
+            foreach(Recipe_Ingreadiant x in obj.Recipe_Ingreadiants){
+            x.RecipeName=obj.Name;
+                } 
 
+           for(int i=obj.Recipe_Ingreadiants.Count -1; i>=0; i--){
+        if(obj.Recipe_Ingreadiants[i].IngreadiantName==null|| obj.Recipe_Ingreadiants[i].IngreadiantName==""){
+            obj.Recipe_Ingreadiants.Remove(obj.Recipe_Ingreadiants[i]);
+        }else
+            {
+                if (_db.Ingreadiants.Any(s => s.Name == obj.Recipe_Ingreadiants[i].IngreadiantName))
+                {
+                    continue;
+                }
+                var ing = new Ingreadiant();
+                ing.Name = obj.Recipe_Ingreadiants[i].IngreadiantName;
+
+                obj.Recipe_Ingreadiants[i].ingreadiant = ing;
+                _db.Recipes_Ingreadiants.Update(obj.Recipe_Ingreadiants[i]);
+            }
+        }
+ try{
         _db.Recipes.Update(obj);
         _db.SaveChanges();
+        }
+        catch(DbUpdateException ex){
+        
+        }
+
        return RedirectToAction("IndexRecipe");
     }
 

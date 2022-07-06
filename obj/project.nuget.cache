@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2bdQhgMi0VTColiIOuyhQf0e2Et4YrcL77IP3I10aRz4N3JUHstl5GBdY84SAXvTX/HkYMvEVTFaE6FgO5tlDw==",
+  "dgSpecHash": "amsroSbH+Qzq4eN1/y6onaaH385mrHxcOliYBi7YHm4jEVMP6qCN9TMmqQN5Yh1aPsRXyUoViJRCLvwl02qepQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\FoodHub.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

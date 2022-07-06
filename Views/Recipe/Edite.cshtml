@@ -11,8 +11,33 @@
             <input type="text" asp-for="Name"  class="form-control" required/>
         </div>
          <div class="mb-3" >
-            <label asp-for="Recipe_Ingreadiants"></label>
-            <input type="text" asp-for="Recipe_Ingreadiants"  class="form-control"/>
+                <table class="table" style="width: 70%;" id="myTable">
+                        <tr>
+                            <th scope="col">Ingreadiant</th>
+                            <th scope="col">quantity</th>
+                        </tr>
+                        
+                            @for (int i = 0,j=0;  i < Model.Recipe_Ingreadiants.Count; i++)
+                                
+                                {
+                                    @if(@Model.Recipe_Ingreadiants[i].IngreadiantName==""){
+                                    <tr scope="row" id="@j" style="display: none;">
+                                  <td style="display: none;"> <input asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName " /> </td>    
+                                  <td style="display: none;"> <input asp-for="@Model.Recipe_Ingreadiants[i].amount" /> </td>   
+                                  </tr>
+                                      }
+                                      @if(@Model.Recipe_Ingreadiants[i].IngreadiantName==""){
+                                             j=j+1;
+                                      }
+                                     
+                                <tr scope="row">
+                                  <td> <input asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName "/> </td>    
+                                  <td> <input asp-for="@Model.Recipe_Ingreadiants[i].amount"/> </td>   
+                                  </tr>     
+                                }
+                        
+                </table>
+                <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
         </div>
         <div class="mb-3" >
             <label asp-for="Discription"></label>
@@ -26,4 +51,12 @@
         <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
     </div>
 </form>
+
+<script>
+    var count=0;
+function MoreRows(){
+            document.getElementById(count).style.display="block";
+            count++;
+    }
+</script> 
 
