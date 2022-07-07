@@ -26,7 +26,7 @@
                                   <td style="display: none;"> <input asp-for="@Model.Recipe_Ingreadiants[i].amount" /> </td>   
                                   </tr>
                                       }
-                                      @if(@Model.Recipe_Ingreadiants[i].IngreadiantName==""){
+                                      @if(@Model.Recipe_Ingreadiants[i].IngreadiantName==null){
                                              j=j+1;
                                       }
                                      

@@ -101,9 +101,9 @@ public class RecipeController : Controller
 
         for(int i=0; i<31;i++){
             var x= new Recipe_Ingreadiant();
-            x.amount="";
+            x.amount=null;
             x.IngreadiantName=recipefromdb.Name;
-            x.IngreadiantName="";
+            x.IngreadiantName=null;
             recipefromdb.Recipe_Ingreadiants.Add(x);
         }
 
@@ -141,11 +141,20 @@ public class RecipeController : Controller
                 ing.Name = obj.Recipe_Ingreadiants[i].IngreadiantName;
 
                 obj.Recipe_Ingreadiants[i].ingreadiant = ing;
-                _db.Recipes_Ingreadiants.Update(obj.Recipe_Ingreadiants[i]);
+               // _db.Recipes_Ingreadiants.Update(obj.Recipe_Ingreadiants[i]);
             }
         }
+
+        var recings = _db.Recipes_Ingreadiants.Where(recing => recing.RecipeName==obj.Name).ToList();
+        foreach(Recipe_Ingreadiant recing in recings){
+            _db.Recipes_Ingreadiants.Remove(recing);
+        }
+
+        var rec= _db.Recipes.Find(obj.Name);
  try{
-        _db.Recipes.Update(obj);
+        _db.Recipes.Remove(rec);
+        _db.SaveChanges();
+        _db.Recipes.Add(obj);
         _db.SaveChanges();
         }
         catch(DbUpdateException ex){
