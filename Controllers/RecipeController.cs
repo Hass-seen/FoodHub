@@ -166,12 +166,23 @@ public class RecipeController : Controller
 
 
 
-     public IActionResult Delete(string? id)
+     public IActionResult Delete(string? name)
     {
-        if(id==null){
+        if(name==null){
             return NotFound();
         }
-        var recipefromdb= _db.Recipes.Find(id);
+        var recipefromdb= _db.Recipes.Find(name);
+        var recipe_Ingreadiantsfromdb= _db.Recipes_Ingreadiants.Where(recing=> recing.RecipeName== recipefromdb.Name);
+        recipefromdb.Recipe_Ingreadiants= recipe_Ingreadiantsfromdb.ToList();
+
+        for(int i=0; i<31;i++){
+            var x= new Recipe_Ingreadiant();
+            x.amount=null;
+            x.IngreadiantName=recipefromdb.Name;
+            x.IngreadiantName=null;
+            recipefromdb.Recipe_Ingreadiants.Add(x);
+        }
+
         if(recipefromdb == null){
             return NotFound();
         }
@@ -183,8 +194,9 @@ public class RecipeController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(Recipe obj)
-    {
-        _db.Recipes.Remove(obj);
+    {       
+        var recipefromdb= _db.Recipes.Find(obj.Name);
+        _db.Recipes.Remove(recipefromdb);
         _db.SaveChanges();
        return RedirectToAction("IndexRecipe");
     }
@@ -202,7 +214,7 @@ public class RecipeController : Controller
     
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Login(Admin admin)
+    public IActionResult Login(User admin)
     {   if(admin.account!= "BobTheBuilder"){
         ModelState.AddModelError("account", "Wrong Username");
         }else if(admin.password!= "BobTheBuilder123"){
