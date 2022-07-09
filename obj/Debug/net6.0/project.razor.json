@@ -16353,6 +16353,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Home\\Visit.cshtml",
+      "TargetPath": "Views\\Home\\Visit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\User\\Create.cshtml",
       "TargetPath": "Views\\User\\Create.cshtml",
       "FileKind": "mvc"

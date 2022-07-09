@@ -27,6 +27,16 @@ namespace FoodHub.Controllers
             return View();
         }
 
+
+         public IActionResult Visit(string? name)
+        {
+        var recipefromdb= _db.Recipes.Find(name);
+        var recipe_Ingreadiantsfromdb= _db.Recipes_Ingreadiants.Where(recing=> recing.RecipeName== recipefromdb.Name);
+        recipefromdb.Recipe_Ingreadiants= recipe_Ingreadiantsfromdb.ToList();
+
+            return View(recipefromdb);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

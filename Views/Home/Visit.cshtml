@@ -1,0 +1,22 @@
+@model Recipe
+
+
+
+<h1 class="text-primary">@Model.Name</h1>
+
+
+<h3>Ingreadiants</h3>
+
+<div style="display:flex ; flex-direction:row;">
+
+@for(int i =0 ,j=0; i<Model.Recipe_Ingreadiants.Count;j++, i++){
+  <div style="width:15% ; margin:auto; border: 1px black solid;">
+    <p>@Model.Recipe_Ingreadiants[i].IngreadiantName</p>
+    <p>@Model.Recipe_Ingreadiants[i].amount</p>
+    <img src="" alt="">
+</div>  
+    @if(j==2){
+        <br>
+    }
+}
+</div>
