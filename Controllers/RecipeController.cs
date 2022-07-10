@@ -25,39 +25,23 @@ public class RecipeController : Controller
         return View();
     }
 
-
     
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(Recipe obj)
-      {   //var recipe=new Recipe(); 
-    //     recipe.Name=obj.name;
-    //     recipe.Discription=obj.discription;
-    //     recipe.link=obj.link;
-
-    //     string[] ings=obj.RecIngr;
-    //     if(ings.Length!=null){
-    //     for(var i=0; i<ings.Length-1;i=i+2){
-    //         if(ings[i]==null){
-    //             continue;
-    //         }
-    //         if(ings[i+1]==null){
-    //            ings[i+1]="..."; 
-    //         }
-    //         var ing= new Ingreadiant();
-    //         ing.Name=ings[i];
-    //         _db.Ingreadiants.Add(ing);
-    //         _db.SaveChanges();
-            
-    //         var recIng= new Recipe_Ingreadiant();
-    //         recIng.amount=ings[i+1];
-    //         recIng.IngreadiantName=ings[i];
-    //         recIng.RecipeName=recipe.Name;
-    //         _db.Recipes_Ingreadiants.Add(recIng);
-    //         _db.SaveChanges();
+      {   
+         if(obj.Discription==null){
+            obj.Discription="";
+        }
+         
+        if(obj.link==null){
+            obj.link=".=.";
+        }
+        var temp= obj.link.Split("=");
+        obj.link= "https://www.youtube.com/embed/"+temp[1];
 
 
-    //      }}
+
     foreach(Recipe_Ingreadiant x in obj.Recipe_Ingreadiants){
         x.RecipeName=obj.Name;
     }  
@@ -118,9 +102,11 @@ public class RecipeController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Edite(Recipe obj)
-    {     if(obj.link==null){
-            obj.link=".";
+    {            if(obj.link==null){
+            obj.link=".=.";
         }
+        var temp= obj.link.Split("=");
+        obj.link= "https://www.youtube.com/embed/"+temp[1];
         if(obj.Discription==null){
             obj.Discription="";
         }
