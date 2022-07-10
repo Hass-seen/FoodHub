@@ -22,8 +22,8 @@
                                 {
                                     @if(@Model.Recipe_Ingreadiants[i].IngreadiantName==null){
                                     <tr scope="row" id="@j" style="display: none;">
-                                  <td style="display: none;"> <input asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName " /> </td>    
-                                  <td style="display: none;"> <input asp-for="@Model.Recipe_Ingreadiants[i].amount" /> </td>   
+                                  <td > <input asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName " /> </td>    
+                                  <td > <input asp-for="@Model.Recipe_Ingreadiants[i].amount" /> </td>   
                                   </tr>
                                       }
                                       @if(@Model.Recipe_Ingreadiants[i].IngreadiantName==null){

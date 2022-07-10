@@ -12,5 +12,7 @@ namespace FoodHub.Models
         public Ingreadiant ingreadiant { get; set; }
 
         public string amount { get; set; }
+
+       
     }
 }
