@@ -16333,6 +16333,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Ingreadiant\\Delete.cshtml",
+      "TargetPath": "Views\\Ingreadiant\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Recipe\\Delete.cshtml",
       "TargetPath": "Views\\Recipe\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16370,6 +16375,11 @@
     {
       "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Ingreadiant\\Edite.cshtml",
+      "TargetPath": "Views\\Ingreadiant\\Edite.cshtml",
       "FileKind": "mvc"
     },
     {

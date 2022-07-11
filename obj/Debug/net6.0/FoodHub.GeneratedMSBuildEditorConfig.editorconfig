@@ -31,6 +31,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVhZGlhbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/Desktop/FoodHub/FoodHub/Views/Ingreadiant/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVhZGlhbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/FoodHub/FoodHub/Views/Ingreadiant/Edite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVhZGlhbnRcRWRpdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/Desktop/FoodHub/FoodHub/Views/Ingreadiant/IndexIng.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVhZGlhbnRcSW5kZXhJbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
