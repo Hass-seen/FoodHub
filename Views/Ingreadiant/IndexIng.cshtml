@@ -11,7 +11,7 @@
         </div>
         <div class="col-6 text-end">
             <a asp-controller="Ingreadiant" asp-action="Create" class="btn btn-primary">
-                 add new Recipe
+                 add new Ingreadiant
             </a>
         </div>
     </div>
@@ -21,7 +21,7 @@
     {
     <div style="width:15% ; margin:2%; border: 1px gray solid; padding: 1%">
     <p style="border-bottom: 1px gray solid;">@item.Name</p>
-    <img src="" alt="">
+    <img src="@item.path" alt="">
      <a asp-controller="Ingreadiant" asp-action="Edite" class="btn btn-primary" asp-route-name="@item.Name" >Edite</a> 
      <a asp-controller="Ingreadiant" asp-action="Delete" class="btn btn-danger" asp-route-name="@item.Name" >Delete</a>
 </div> 

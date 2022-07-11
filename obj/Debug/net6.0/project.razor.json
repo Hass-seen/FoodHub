@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Ingreadiant\\Create.cshtml",
+      "TargetPath": "Views\\Ingreadiant\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\Views\\Recipe\\Login.cshtml",
       "TargetPath": "Views\\Recipe\\Login.cshtml",
       "FileKind": "mvc"

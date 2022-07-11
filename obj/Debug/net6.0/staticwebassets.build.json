@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uoRU3vqLqus8PGKQudZg+jaNmDtS5ll14LRCYIzy09o=",
+  "Hash": "OYuWG4omRtEt0Y4mMzPnv415IVdVL2lutLu5/dp7MXs=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\bc3acaed-828d-4d0b-af94-7a902091f29b459010936011751434.png",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "Images/bc3acaed-828d-4d0b-af94-7a902091f29b459010936011751434.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\bc3acaed-828d-4d0b-af94-7a902091f29b459010936011751434.png"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\js\\site.js",

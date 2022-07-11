@@ -1,0 +1,14 @@
+@model Ingreadiant
+
+
+
+<form method="post" enctype="multipart/form-data" asp-action="Create">
+
+    <label asp-for="Name"></label>
+    <input type="text" asp-for="Name"  id="Name"  class="form-control" required/>
+
+  <label asp-for="Image" class="form-label"></label>
+  <input class="form-control" asp-for="Image" type="file" id="formFile">
+  <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Add</button>
+</form>
+<a asp-controller="Ingreadiant" asp-action="IndexIng" class="btn btn-secondary" style="width: 150px ;">Back</a>
