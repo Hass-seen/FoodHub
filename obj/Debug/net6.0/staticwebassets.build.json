@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PyHPTQGabfCReutV336I3gWBBjkEdjoe9RGRp3kJmhU=",
+  "Hash": "ExdYK+vBOS7s1mDumaG3C0iPJmRwXhdOLfA/S5QhY7U=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\7954f356-c11a-4c77-8247-03d72abdaf99459010936011751434.png"
     },
     {
+      "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\930cdc46-4feb-4cf1-bc09-9303d194170e459338535963459594.png",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "Images/930cdc46-4feb-4cf1-bc09-9303d194170e459338535963459594.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\930cdc46-4feb-4cf1-bc09-9303d194170e459338535963459594.png"
+    },
+    {
       "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\bc3acaed-828d-4d0b-af94-7a902091f29b459010936011751434.png",
       "SourceId": "FoodHub",
       "SourceType": "Discovered",
@@ -151,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\c7347beb-6426-40ba-8a42-122cdfcbe05f456329896826765315.png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\dd847566-562b-4af3-87b3-3a36311f6a9d459012210677776415.png",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "Images/dd847566-562b-4af3-87b3-3a36311f6a9d459012210677776415.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\dd847566-562b-4af3-87b3-3a36311f6a9d459012210677776415.png"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\default.jpg",

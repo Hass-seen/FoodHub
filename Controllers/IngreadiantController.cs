@@ -50,7 +50,7 @@ public class IngreadiantController : Controller
 
 
 
-         public IActionResult Edite(String name)
+         public IActionResult Edite(String? name)
     {   
         
         var ing =_db.Ingreadiants.Find(name);
@@ -77,7 +77,7 @@ public class IngreadiantController : Controller
     }
 
 
-         public IActionResult Delete(String name)
+         public IActionResult Delete(String? name)
     {   
         
         var ing =_db.Ingreadiants.Find(name);
