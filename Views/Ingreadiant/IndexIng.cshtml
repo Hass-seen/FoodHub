@@ -1,0 +1,32 @@
+@model IEnumerable<Ingreadiant>
+
+@{
+    ViewData["title"] = "IndexRecipe";
+}
+
+<div class="container p-3">
+    <div class="row p-4">
+        <div class="col-6">
+            <h2 class="text-primary">Recipes</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Ingreadiant" asp-action="Create" class="btn btn-primary">
+                 add new Recipe
+            </a>
+        </div>
+    </div>
+
+<div style="display:flex ; flex-flow: row wrap;border-top: 1px black solid;">
+    @foreach (var item in Model)
+    {
+    <div style="width:15% ; margin:2%; border: 1px gray solid; padding: 1%">
+    <p style="border-bottom: 1px gray solid;">@item.Name</p>
+    <img src="" alt="">
+     <a asp-controller="Ingreadiant" asp-action="Edite" class="btn btn-primary" asp-route-name="@item.Name" >Edite</a> 
+     <a asp-controller="Ingreadiant" asp-action="Delete" class="btn btn-danger" asp-route-name="@item.Name" >Delete</a>
+</div> 
+
+    }
+</div>
+
+

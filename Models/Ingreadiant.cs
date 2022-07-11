@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace FoodHub.Models
 {
@@ -8,6 +9,8 @@ namespace FoodHub.Models
         public string Name { get; set; }
 
      public List<Recipe_Ingreadiant> Recipe_Ingreadiants { get; set; }
+
+     public IFormFile Image { get; set; }
 
     }
 }
