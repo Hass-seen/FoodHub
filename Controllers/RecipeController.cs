@@ -1,5 +1,6 @@
 using FoodHub.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodHub.Controllers;
@@ -22,7 +23,9 @@ public class RecipeController : Controller
 
         public IActionResult Create()
     {
-        return View();
+        var obj= new Recipe();
+        obj.AllIngs=_db.Ingreadiants.ToList();
+        return View(obj);
     }
 
     
@@ -94,6 +97,7 @@ public class RecipeController : Controller
         if(recipefromdb == null){
             return NotFound();
         }
+                recipefromdb.AllIngs=_db.Ingreadiants.ToList();
         return View(recipefromdb);
     }
 
@@ -106,7 +110,11 @@ public class RecipeController : Controller
             obj.link=".=.";
         }
         var temp= obj.link.Split("=");
+        try{
         obj.link= "https://www.youtube.com/embed/"+temp[1];
+        } catch(Exception ex){
+
+        }
         if(obj.Discription==null){
             obj.Discription="";
         }
@@ -143,7 +151,7 @@ public class RecipeController : Controller
         _db.Recipes.Add(obj);
         _db.SaveChanges();
         }
-        catch(DbUpdateException ex){
+        catch(SqlException exception){
         
         }
 

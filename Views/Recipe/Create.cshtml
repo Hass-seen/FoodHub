@@ -14,7 +14,7 @@
             <label asp-for="Name"></label>
             <input type="text" asp-for="Name"  id="Name"  class="form-control" required/>
         </div>
-         <div class="mb-3" >
+         <div class="mb-3" style="position: relative;" >
             @* <label asp-for="Recipe_Ingreadiants"></label>
             <input type="text" asp-for="Recipe_Ingreadiants"  class="form-control"/> *@
                 <table class="table" style="width: 70%;" id="myTable">
@@ -22,13 +22,32 @@
                             <th scope="col">Ingreadiant</th>
                             <th scope="col">quantity</th>
                         </tr>
-                        
-                            @for (int i = 0;  i < 10; i++)
+                        <tr scope="row" >
+                                  <td> <input  asp-for="@Model.Recipe_Ingreadiants[0].IngreadiantName "/> </td>    
+                                  <td> <input asp-for="@Model.Recipe_Ingreadiants[0].amount"/> </td>   
+                                  </tr> 
+                            @for (int i = 1;  i < 10; i++)
                                 {<tr scope="row" id="@i" style="display: none;">
-                                  <td> <input asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName "/> </td>    
+                                  <td> <input id="-@i" asp-for="@Model.Recipe_Ingreadiants[i].IngreadiantName "/> </td>    
                                   <td> <input asp-for="@Model.Recipe_Ingreadiants[i].amount"/> </td>   
                                   </tr>     
                                 }
+            <div class="containerr">
+
+            <button type="button" class="click">Choose</button>
+
+            <div class="list">
+                @foreach (var item in @Model.AllIngs)
+                {
+                   <button type="button" class="links" onclick="choose('@item.Name')">@item.Name</button> 
+                }
+                
+
+            </div>
+
+        
+
+
                         
                 </table>
                 <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
@@ -49,10 +68,23 @@
 
 
 <script>
-    var count=0;
+    var count=1;
 function MoreRows(){
             document.getElementById(count).style.display="block";
             count++;
     }
+
+let click = document.querySelector('.click');
+let list = document.querySelector('.list');
+click.addEventListener("click",()=>{
+list.classList.toggle('newlist');
+});
+
+function choose(x){
+console.log(x);
+document.getElementById(-count).setAttribute('value', x);
+MoreRows();
+}
+
 </script> 
 
