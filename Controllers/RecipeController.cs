@@ -1,6 +1,6 @@
 using FoodHub.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+// using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodHub.Controllers;
@@ -61,6 +61,9 @@ public class RecipeController : Controller
                 }
                 var ing = new Ingreadiant();
                 ing.Name = obj.Recipe_Ingreadiants[i].IngreadiantName;
+                ing.path="/images/default.jpg";
+                _db.Ingreadiants.Add(ing);
+                _db.SaveChanges();
 
                 obj.Recipe_Ingreadiants[i].ingreadiant = ing;
             }
@@ -151,7 +154,7 @@ public class RecipeController : Controller
         _db.Recipes.Add(obj);
         _db.SaveChanges();
         }
-        catch(SqlException exception){
+        catch(DbUpdateException exception){
         
         }
 
