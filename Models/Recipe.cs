@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace FoodHub.Models
 {
     public class Recipe
@@ -12,6 +14,9 @@ namespace FoodHub.Models
         public DateTime DateOfCreation { get; set; } = DateTime.Now;
 
         public List<Recipe_Ingreadiant> Recipe_Ingreadiants { get; set; }
+
+    [NotMapped]
+     public List<Ingreadiant> AllIngs { get; set; }
 
     }
 }

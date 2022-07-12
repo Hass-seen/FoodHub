@@ -1,5 +1,6 @@
 ﻿using FoodHub.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace FoodHub.Controllers
@@ -31,7 +32,7 @@ namespace FoodHub.Controllers
          public IActionResult Visit(string? name)
         {
         var recipefromdb= _db.Recipes.Find(name);
-        var recipe_Ingreadiantsfromdb= _db.Recipes_Ingreadiants.Where(recing=> recing.RecipeName== recipefromdb.Name);
+        var recipe_Ingreadiantsfromdb= _db.Recipes_Ingreadiants.Include(i=> i.ingreadiant).Where(recing=> recing.RecipeName== recipefromdb.Name);
         recipefromdb.Recipe_Ingreadiants= recipe_Ingreadiantsfromdb.ToList();
 
             return View(recipefromdb);
