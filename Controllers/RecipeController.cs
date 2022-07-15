@@ -116,7 +116,7 @@ public class RecipeController : Controller
         try{
         obj.link= "https://www.youtube.com/embed/"+temp[1];
         } catch(Exception ex){
-
+         obj.link= "https://www.youtube.com/embed/.";
         }
         if(obj.Discription==null){
             obj.Discription="";
@@ -136,7 +136,7 @@ public class RecipeController : Controller
                 }
                 var ing = new Ingreadiant();
                 ing.Name = obj.Recipe_Ingreadiants[i].IngreadiantName;
-
+                ing.path="/images/default.jpg";
                 obj.Recipe_Ingreadiants[i].ingreadiant = ing;
                // _db.Recipes_Ingreadiants.Update(obj.Recipe_Ingreadiants[i]);
             }
@@ -150,7 +150,7 @@ public class RecipeController : Controller
         var rec= _db.Recipes.Find(obj.Name);
  try{
         _db.Recipes.Remove(rec);
-        _db.SaveChanges();
+       // _db.SaveChanges();
         _db.Recipes.Add(obj);
         _db.SaveChanges();
         }

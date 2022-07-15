@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ExdYK+vBOS7s1mDumaG3C0iPJmRwXhdOLfA/S5QhY7U=",
+  "Hash": "OQfLy4W1zhQGtPcOL9uVTy/vEvj2Qjet4OWp3GSm458=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\default.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\e05be3e3-62e9-4878-a349-c464bb0f0799459010936011751434.png",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "Images/e05be3e3-62e9-4878-a349-c464bb0f0799459010936011751434.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\e05be3e3-62e9-4878-a349-c464bb0f0799459010936011751434.png"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\FoodHub\\FoodHub\\wwwroot\\Images\\e3c811e8-59e7-48c8-92f1-89f93559b496459012210677776415.png",
