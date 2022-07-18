@@ -7,14 +7,14 @@
 <div class="container p-3">
     <div class="row p-4">
         <div class="col-6">
-            <h2 class="text-primary">Recipes</h2>
+            <h2 class="text-primary">الوصفات</h2>
         </div>
         <div class="col-6 text-end">
             <a asp-controller="Recipe" asp-action="Create" class="btn btn-primary">
-                 add new Recipe
+                 إضافة وصفة
             </a>
             <a asp-controller="Ingreadiant" asp-action="IndexIng" class="btn btn-primary">
-                 Mange Ingreadiants
+                 إدارة المكونات
             </a>
         </div>
     </div>
@@ -33,7 +33,7 @@
          <iframe width="560" height="315" src= @item.link title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br> 
           }
 
-          <a asp-controller="Recipe" asp-action="Edite" class="btn btn-primary" asp-route-name="@item.Name" >Edite</a> <a asp-controller="Recipe" asp-action="Delete" class="btn btn-danger" asp-route-name="@item.Name" >Delete</a>
+          <a asp-controller="Recipe" asp-action="Edite" class="btn btn-primary" asp-route-name="@item.Name" >تعديل</a> <a asp-controller="Recipe" asp-action="Delete" class="btn btn-danger" asp-route-name="@item.Name" >مسح</a>
 		  </div>
     }
 

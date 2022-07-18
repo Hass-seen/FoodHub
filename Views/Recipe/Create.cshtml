@@ -7,11 +7,11 @@
 <form method="Post" asp-action="Create">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary"> Add Recipe</h2>
+            <h2 class="text-primary"> إضافة وصفة</h2>
             <hr />
         </div>
         <div class="mb-3" >
-            <label asp-for="Name"></label>
+            <label >الإسم</label>
             <input type="text" asp-for="Name"  id="Name"  class="form-control" required/>
         </div>
          <div class="mb-3" style="position: relative;" >
@@ -19,8 +19,8 @@
             <input type="text" asp-for="Recipe_Ingreadiants"  class="form-control"/> *@
                 <table class="table" style="width: 70%;" id="myTable">
                         <tr>
-                            <th scope="col">Ingreadiant</th>
-                            <th scope="col">quantity</th>
+                            <th scope="col">مكون</th>
+                            <th scope="col">الكمية</th>
                         </tr>
                         <tr scope="row" >
                                   <td> <input  asp-for="@Model.Recipe_Ingreadiants[0].IngreadiantName "/> </td>    
@@ -34,7 +34,7 @@
                                 }
             <div class="containerr">
 
-            <button type="button" class="click">Choose</button>
+            <button type="button" class="click">اختر</button>
 
             <div class="list">
                 @foreach (var item in @Model.AllIngs)
@@ -45,18 +45,18 @@
 
             </div>            
                 </table>
-                <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
+                <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">اضاقة</button>
         </div>
         <div class="mb-3" >
-            <label asp-for="Discription"></label>
+            <label asp-for="Discription">الوصفة</label>
             <input type="text" asp-for="Discription"  id="Discription"  class="form-control"/>
         </div>
         <div class="mb-3" >
-            <label asp-for="link"></label>
+            <label asp-for="link">رابط الفيدو</label>
             <input type="text" asp-for="link" id="Link" class="form-control"/>
         </div>
-        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Add</button>
-        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
+        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">تم</button>
+        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">رجوع</a>
     </div>
 </form>  
 

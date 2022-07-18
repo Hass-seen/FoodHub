@@ -3,18 +3,18 @@
 <form method="Post" asp-action="Edite">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary"> Edite Recipe</h2>
+            <h2 class="text-primary"> وصفة تعديل</h2>
             <hr />
         </div>
         <div class="mb-3" >
-            <label asp-for="Name"></label>
+            <label asp-for="Name">الإسم</label>
             <input type="text" asp-for="Name"  class="form-control" required/>
         </div>
          <div class="mb-3" style="position: relative;" >
                 <table class="table" style="width: 70%;" id="myTable">
                         <tr>
-                            <th scope="col">Ingreadiant</th>
-                            <th scope="col">quantity</th>
+                            <th scope="col">مكون</th>
+                            <th scope="col">اكمية</th>
                         </tr>
                         
                             @for (int i = 0,j=1;  i < Model.Recipe_Ingreadiants.Count; i++)
@@ -38,7 +38,7 @@
                                 }
                                     <div class="containerr">
 
-            <button type="button" class="click">Choose</button>
+            <button type="button" class="click">اختر</button>
 
             <div class="list">
                 @foreach (var item in @Model.AllIngs)
@@ -53,15 +53,15 @@
                 <button type="button" class="btn btn-primary" id="new" onclick="MoreRows()">new</button>
         </div>
         <div class="mb-3" >
-            <label asp-for="Discription"></label>
+            <label asp-for="Discription">الوصفة</label>
             <input type="text" asp-for="Discription"  class="form-control"/>
         </div>
         <div class="mb-3" >
-            <label asp-for="link"></label>
+            <label asp-for="link">رابط الفيدو</label>
             <input type="text" asp-for="link"  class="form-control"/>
         </div>
-        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Edite</button>
-        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
+        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">تعديل</button>
+        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">رجوع</a>
     </div>
 </form>
 

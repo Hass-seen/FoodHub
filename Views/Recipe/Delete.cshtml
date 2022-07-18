@@ -3,18 +3,18 @@
 <form method="Post" asp-action="Delete">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary"> Delete Recipe</h2>
+            <h2 class="text-primary"> وصفة مسح</h2>
             <hr />
         </div>
         <div class="mb-3" >
-            <label asp-for="Name"></label>
+            <label asp-for="Name">وصفة</label>
             <input type="text" asp-for="Name"  class="form-control" required readonly/>
         </div>
          <div class="mb-3" >
 <table class="table" style="width: 70%;" id="myTable">
                         <tr>
-                            <th scope="col">Ingreadiant</th>
-                            <th scope="col">quantity</th>
+                            <th scope="col">مكون</th>
+                            <th scope="col">اكمية</th>
                         </tr>
                         
                             @for (int i = 0,j=0;  i < Model.Recipe_Ingreadiants.Count; i++)
@@ -40,15 +40,15 @@
                 </table>
         </div>
         <div class="mb-3" >
-            <label asp-for="Discription"></label>
+            <label asp-for="Discription">الوصفة</label>
             <input type="text" asp-for="Discription"  class="form-control" readonly/>
         </div>
         <div class="mb-3" >
-            <label asp-for="link"></label>
+            <label asp-for="link">رابط الفيدو</label>
             <input type="text" asp-for="link"  class="form-control" readonly/>
         </div>
-        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Delete</button>
-        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">Back</a>
+        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">مسح</button>
+        <a asp-controller="Recipe" asp-action="IndexRecipe" class="btn btn-secondary" style="width: 150px ;">رجوع</a>
     </div>
 </form>
 

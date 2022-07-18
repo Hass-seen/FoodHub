@@ -4,15 +4,15 @@
 
 <form method="post" enctype="multipart/form-data" asp-action="Create">
 <div class="mb-3">
-    <label asp-for="Name"></label>
+    <label asp-for="Name">الإسم</label>
     <input type="text" asp-for="Name"  id="Name"  class="form-control" required/>
 </div>
 <div class="mb-3">
-  <label asp-for="Image" class="form-label"></label>
+  <label asp-for="Image" class="form-label">الصورة</label>
   <input class="form-control" asp-for="Image" type="file" id="formFile">
   </div>
   <div class="mb-3">
-  <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Add</button>
-  <a asp-controller="Ingreadiant" asp-action="IndexIng" class="btn btn-secondary" style="width: 150px ;">Back</a>
+  <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">اضافة</button>
+  <a asp-controller="Ingreadiant" asp-action="IndexIng" class="btn btn-secondary" style="width: 150px ;">رجوع</a>
   </div>
 </form>

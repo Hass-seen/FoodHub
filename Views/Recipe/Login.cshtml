@@ -6,19 +6,19 @@
 <form method="Post" asp-action="Login">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary"> Log in</h2>
+            <h2 class="text-primary">تسجيل دخول</h2>
             <hr />
         </div>
         <div class="mb-3" >
-            <label asp-for="account"></label>
+            <label >الحساب</label>
             <input type="text" asp-for="account"  class="form-control" required/>
             <span asp-validation-for="account" class="text-danger"></span>
         </div>
          <div class="mb-3" >
-            <label asp-for="password"></label>
+            <label >كلمة المرور</label>
             <input type="text" asp-for="password"  class="form-control"/>
             <span asp-validation-for="password" class="text-danger"></span>
         </div>
-        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;">Log In</button>
+        <button type="submit" id="sub" class="btn btn-primary" style="width: 150px;"> تسجيل دخول</button>
     </div>
 </form>
