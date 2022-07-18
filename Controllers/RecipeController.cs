@@ -41,7 +41,11 @@ public class RecipeController : Controller
             obj.link=".=.";
         }
         var temp= obj.link.Split("=");
+        try{
         obj.link= "https://www.youtube.com/embed/"+temp[1];
+        }catch(Exception e){
+            obj.link= "https://www.youtube.com/embed/.";
+        }
 
 
 
